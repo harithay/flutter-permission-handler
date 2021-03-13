@@ -55,6 +55,7 @@ public class PermissionUtils {
                 return PermissionConstants.PERMISSION_GROUP_SMS;
             case Manifest.permission.READ_EXTERNAL_STORAGE:
             case Manifest.permission.WRITE_EXTERNAL_STORAGE:
+            case Manifest.permission.MANAGE_EXTERNAL_STORAGE:
                 return PermissionConstants.PERMISSION_GROUP_STORAGE;
             case Manifest.permission.ACCESS_MEDIA_LOCATION:
                 return PermissionConstants.PERMISSION_GROUP_ACCESS_MEDIA_LOCATION;
@@ -176,6 +177,9 @@ public class PermissionUtils {
 
                 if (hasPermissionInManifest(context, permissionNames, Manifest.permission.WRITE_EXTERNAL_STORAGE))
                     permissionNames.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                
+                if (hasPermissionInManifest(context, permissionNames, Manifest.permission.MANAGE_EXTERNAL_STORAGE))
+                    permissionNames.add(Manifest.permission.MANAGE_EXTERNAL_STORAGE);
                 break;
 
             case PermissionConstants.PERMISSION_GROUP_IGNORE_BATTERY_OPTIMIZATIONS:
